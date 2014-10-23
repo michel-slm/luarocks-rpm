@@ -13,6 +13,10 @@ local luarocks_rpm = require 'luarocks_rpm'
 cli:set_name('luarocks-rpm')
 cli:add_flag('--version', 'prints the program version and exits')
 
+cli:add_argument('rockspec', 'the rockspec to convert')
+cli:add_option('-o, --output=DIRECTORY', 'output directory')
+cli:add_option('-p, --pkgname=NAME', 'override for package name')
+
 -- Parse the cli arguments
 
 local cliArgs, hasError = cli:parse()
