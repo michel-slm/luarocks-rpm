@@ -1,0 +1,25 @@
+#!/usr/bin/env lua
+--
+-- Created by IntelliJ IDEA.
+-- User: michel
+-- Date: 10/23/14
+-- Time: 1:03 PM
+-- To change this template use File | Settings | File Templates.
+--
+
+local cli = require 'cliargs'
+local luarocks_rpm = require 'luarocks_rpm'
+
+cli:set_name('luarocks-rpm')
+cli:add_flag('--version', 'prints the program version and exits')
+
+-- Parse the cli arguments
+
+local cliArgs, hasError = cli:parse()
+if hasError then
+    os.exit(1)
+end
+
+if cliArgs.version then
+    return print(luarocks_rpm.version)
+end

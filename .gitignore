@@ -1,0 +1,7 @@
+# Editor temp files
+*~
+.#*
+\#*#
+
+# IDE files
+.idea
